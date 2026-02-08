@@ -140,7 +140,7 @@ int main(int argc, char **argv) {
 
     int path_len = 50;
     char env_str[path_len];
-    snprintf(env_str, path_len, "LD_PRELOAD=/proc/%d/fd/%d", getpid(), preload_fd);
+    snprintf(env_str, path_len, "LD_PRELOAD=/dev/fd/%d", preload_fd);
     putenv(env_str);
     LOGD("set env %s", env_str);
 
